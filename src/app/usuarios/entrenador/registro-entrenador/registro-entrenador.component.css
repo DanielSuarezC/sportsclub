@@ -1,0 +1,26 @@
+.formularioRegistro{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+}
+.form-group{
+    padding-bottom: 3%;
+}
+
+.example-form-fields {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .bootstrap-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    margin-top: 0;
+    padding-top: 20px;
+    background-image: url('../../../../assets/backgroundlogin.jpg');
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+}

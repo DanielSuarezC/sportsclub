@@ -1,0 +1,13 @@
+.example-spacer{
+    flex: 1 1 auto;
+}
+
+.smaller-font{
+    font-size: 100%;
+    margin-left: 20%;
+}
+
+mat-toolbar{
+    /* background-color:#73AFD1; */
+    padding: 5px;
+}

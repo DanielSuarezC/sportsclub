@@ -1,0 +1,55 @@
+<mat-toolbar color="primary">
+    <div>
+        <!-- menu Usuarios -->
+        <button mat-button [matMenuTriggerFor]="Usuariosmenu" aria-label="Example icon-button with a menu">
+            <mat-icon>people</mat-icon>
+            Usuarios
+        </button>
+        <mat-menu #Usuariosmenu="matMenu">
+            <button [routerLink]="'/lista-deportista'" mat-menu-item>
+                <mat-icon>account_circle</mat-icon>
+                Deportistas
+            </button>
+            <button [routerLink]="'/lista-entrenador'" mat-menu-item>
+            <mat-icon>account_box</mat-icon>
+                Entrenadores
+            </button>
+            <button [routerLink]="'/lista-administrativo'" mat-menu-item>
+                <mat-icon>work</mat-icon>
+                Administrativos
+            </button>
+        </mat-menu>
+
+        <button mat-button aria-label="Example icon-button with a menu" [routerLink]="'/lista-torneo'" >
+            <mat-icon>whatshot</mat-icon>
+            Torneos
+        </button>
+        <button mat-button aria-label="Example icon-button with a menu" [routerLink]="'/lista-entrenamiento'">
+            <mat-icon>fitness_center</mat-icon>
+            Entrenamientos
+        </button>
+        <!-- <button mat-button aria-label="Example icon-button with a menu" [routerLink]="'/lista-reunion'">
+            <mat-icon>event</mat-icon>
+            Reuniones
+        </button> -->
+        <button mat-button aria-label="Example icon-button with a menu" [routerLink]="'/lista-club'">
+            <mat-icon>location_city</mat-icon>
+            Club
+        </button>
+       
+    </div>
+    <span class="example-spacer"></span>
+    <!-- <mat-label>{{usuario?.nombres}} / {{usuario?.rol}}</mat-label> -->
+    <button mat-button matTooltip="Cerrar Sesión" (click)="cerrarSesion()">
+        <mat-icon>logout</mat-icon>
+    </button>
+    <span>
+        <img 
+        height="60" 
+        src="../../../assets/logo SPORTS CLUB letra blanca.png" 
+        [routerLink]="'/inicio'" 
+        matTooltip="Inicio" 
+        style="cursor: pointer;">
+    </span>
+</mat-toolbar>
+

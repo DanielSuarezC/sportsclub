@@ -1,0 +1,23 @@
+.bootstrap-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    margin-top: 0;
+    padding-top: 20px;
+    background-image: url('../../../assets/backgroundlogin.jpg');
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+}
+.contenedorHoras{
+    display: flex;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 50vh;
+}
+.inputsRow {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}

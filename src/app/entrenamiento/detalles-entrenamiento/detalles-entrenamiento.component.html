@@ -1,0 +1,263 @@
+<!-- <block-ui message="Por favor espere..."> -->
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="offset">
+                    <br>
+                    <mat-card>
+                        <form [formGroup]="form1" (ngSubmit)="guardar()">
+                            <div class="contenedor ml5 mr5">
+                                <br>
+                                <div class="text-center">
+                                    <br>
+                                    <h3 class="text-center">Detalles de Entrenamiento</h3>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="contenedor ml5 mr5">
+
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Id entrenamiento</mat-label>
+                                        <input formControlName="identrenamiento" matInput placeholder="id entrenador">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Tipo</mat-label>
+                                        <input formControlName="tipo" matInput placeholder="Tipo">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Jornada</mat-label>
+                                        <mat-select formControlName="jornada">
+                                            <mat-option>...</mat-option>
+                                            <mat-option value="Mañana">Mañana</mat-option>
+                                            <mat-option value="Tarde">Tarde</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Entrenador encargado</mat-label>
+                                        <mat-select formControlName="ent_cedula">
+                                            <mat-option *ngFor="let entrenador of entrenadores" [value]="entrenador.ent_cedula" >
+                                            {{entrenador.nombre}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Estado</mat-label>
+                                        <mat-select formControlName="estado">
+                                            <mat-option>...</mat-option>
+                                            <mat-option value="Sin empezar">Sin empezar</mat-option>
+                                            <mat-option value="En curso">En curso</mat-option>
+                                            <mat-option value="Finalizado">Finalizado</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Fecha</mat-label>
+                                        <input matInput [matDatepicker]="picker3" formControlName="fecha"
+                                            placeholder="MM/DD/YYYY">
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker3></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+
+                                <!-- <div class="contenedorInterno"> -->
+                                    <mat-form-field>
+                                        <mat-label> Hora inicio</mat-label>
+                                        <input formControlName="horainicio" matInput [ngxTimepicker]="picker">
+                                        <ngx-material-timepicker #picker [theme]="darkTheme"></ngx-material-timepicker>
+                                      </mat-form-field>
+                                <!-- </div> -->
+                                <!-- <div class="contenedorInterno"> -->
+                                    <mat-form-field>
+                                      <mat-label>Hora de finalizacion</mat-label>
+                                      <input formControlName="horafin" matInput [ngxTimepicker]="picker2">
+                                      <ngx-material-timepicker #picker2 [theme]="darkTheme"></ngx-material-timepicker>
+                                    </mat-form-field>
+                                <!-- </div> -->
+                                                
+                                <!-- <div class="contenedorInterno"></div> -->
+                                <br><br>
+                                <button type="submit" mat-raised-button color="primary" >
+                                    <mat-icon>save</mat-icon>
+                                    Actualizar
+                                </button>
+                                <button [routerLink]="'/lista-entrenamiento'" type="reset" style="margin-left: 20px;" mat-raised-button color="accent">
+                                    <mat-icon>undo</mat-icon>
+                                    Volver
+                                </button>
+
+                            </div>
+                        </form>
+                        <br>    
+                    </mat-card>
+                    <br>
+
+                    <br>
+                    <mat-card class="matcard-table">
+                        <h3>Lista de deportistas inscritos</h3>
+                        <div class="mat-elevation-z8">
+                            <table mat-table [dataSource]="dataSourceInscritos" matSort>
+
+                                <ng-container matColumnDef="nombres" >
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombres</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.nombre_deportista}}</td>
+                                </ng-container>
+    
+                                <ng-container matColumnDef="cedula" >
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Cedula </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.dep_cedula}} </td>
+                                </ng-container>
+    
+                                <ng-container matColumnDef="email">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="telefono">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Telefono </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="categoria">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoria </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="elo">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Elo </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.elo}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="identrenamiento">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> id Entrenamiento </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.identrenamiento}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="fecha">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="horainicio">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Hora inicio </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.horainicio}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="horafin">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Hora fin </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.horafin}} </td>
+                                </ng-container>
+    
+                                <!-- <ng-container matColumnDef="estado">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.estado}}</td>
+                                </ng-container> -->
+    
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+
+                                <ng-container matColumnDef="icon">
+                                    <th mat-header-cell *matHeaderCellDef>
+                                        Eliminar deportista
+                                    </th>
+                                    <td mat-cell *matCellDef="let row">
+                                        <a mat-icon-button class="example-icon"
+                                            aria-label="Example mat-icon-button with menu icon"
+                                            matTooltip="Eliminar deportista">
+                                            <mat-icon>delete</mat-icon>
+                                        </a>
+                                    </td>
+                                </ng-container>
+                            </table>
+    
+                            <mat-paginator [length]="cantidadRegistros" [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10"></mat-paginator>
+                        </div>
+                    </mat-card>
+                    <br>
+
+                    <mat-card class="matcard-table">
+                        <h3>Lista de deportistas no inscritos</h3>
+                        <div class="mat-elevation-z8">
+                            <table mat-table [dataSource]="dataSourceNoInscritos" matSort>
+
+                                <ng-container matColumnDef="nombres" >
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombres</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.nombre_deportista}}</td>
+                                </ng-container>
+    
+                                <ng-container matColumnDef="cedula" >
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Cedula </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.dep_cedula}} </td>
+                                </ng-container>
+    
+                                <ng-container matColumnDef="email">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="telefono">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Telefono </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="categoria">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoria </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="elo">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Elo </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.elo}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="club">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id Club </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.idclub}} </td>
+                                </ng-container>
+    
+                                <ng-container matColumnDef="estado">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.estado}}</td>
+                                </ng-container>
+    
+                                <tr mat-header-row *matHeaderRowDef="displayedColumnsNoInscritos"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumnsNoInscritos;"></tr>
+    
+
+                                <ng-container matColumnDef="icon">
+                                    <th mat-header-cell *matHeaderCellDef>
+                                        Agregar deportista al entrenamiento
+                                    </th>
+                                    <td mat-cell *matCellDef="let row">
+                                        <a (click)="AgregarDeportista(row)" mat-icon-button class="example-icon"
+                                            aria-label="Example mat-icon-button with menu icon"
+                                            matTooltip="Seleccionar deportista">
+                                            <mat-icon>check</mat-icon>
+                                        </a>
+                                    </td>
+                                </ng-container>
+                            </table>
+    
+                            <mat-paginator [length]="cantidadRegistros" [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10"></mat-paginator>
+                        </div>
+                    </mat-card>
+                    <br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </block-ui> -->
+

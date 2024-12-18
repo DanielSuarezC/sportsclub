@@ -1,0 +1,14 @@
+.formularioRegistro{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+}
+.form-group{
+    padding-bottom: 3%;
+}
+
+.example-form-fields {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }

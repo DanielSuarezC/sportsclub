@@ -1,0 +1,37 @@
+    <div class="bootstrap-wrapper text-center">
+        <div class="center-container mt20">
+            <div class="row">
+                <div class="offset-md">
+
+                    <mat-card class="example-card">
+                        <div class="container text-center">
+                            <img src="../../../assets/contrasena.png" width="100" height="100">
+                        </div>
+
+                        <h1 class="text-center">Ingrese</h1>
+
+                        <form [formGroup]="form1" (ngSubmit)="validar()">
+                            <mat-card-content>
+                                <mat-form-field class="full-width" >
+                                    <mat-label>Identificación</mat-label>
+                                    <input formControlName="identificacion" matInput placeholder="Digite su Identificación">
+                                </mat-form-field>
+                                <mat-form-field class="full-width" >
+                                    <mat-label>Clave</mat-label>
+                                    <input type="password" formControlName="clave" matInput placeholder="Digite su clave">
+                                </mat-form-field>
+                                <br>
+                                <div>
+                                    <button type="submit" mat-raised-button color="primary" class="w-100">Iniciar sesión</button>
+                                </div>
+                            </mat-card-content>
+                        </form>
+                        <br>
+                    </mat-card>
+                    <br><br><br>
+                </div>
+            </div>
+        </div> 
+    <!-- </div>
+<!-- </div>     -->
+<!-- </block-ui> -->

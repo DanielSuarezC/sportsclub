@@ -1,0 +1,82 @@
+<!-- <block-ui message="Por favor espere..."> -->
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row" style="margin-top:20px;">
+                <div class="offset">
+<!-- 
+                <div class="offset-md-4">     -->
+                    <!-- <mat-card> -->
+
+                        <form [formGroup]="form1" (ngSubmit)="guardar()">
+                            <div class="contenedor ml5 mr5">
+                                <br>
+                                <div class="text-center">
+                                    <br>
+                                    <h3 class="text-center">Registro de club</h3>
+                                    <div class="container text-center">
+                                        <img src="../../../assets/pestana.png" width="100" height="100">
+                                    </div>
+                                </div>
+                                <br>
+                                <h5>Información básica</h5>
+                            </div>
+                            <br>
+                            <div class="contenedor ml5 mr5">
+
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Id del club</mat-label>
+                                        <input
+                                            [ngClass]="{'is-invalid': hasErrors('idclub','required') || hasErrors('idclub','minlength')}"
+                                            formControlName="idclub" matInput
+                                            placeholder="id del club">     
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Nombre</mat-label>
+                                        <input formControlName="nombre" matInput placeholder="Digite el nombre">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Ciudad</mat-label>
+                                        <input formControlName="ciudad" matInput placeholder="Digite la ciudad">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Direccion</mat-label>
+                                        <input
+                                            formControlName="direccion" 
+                                            matInput
+                                            placeholder="Digite la direccion">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Telefono</mat-label>
+                                        <input formControlName="telefono" matInput placeholder="Digite el telefono">
+                                    </mat-form-field>
+                                </div>
+                                <br>
+                                <button type="submit" mat-raised-button color="primary" >
+                                    <mat-icon>save</mat-icon>
+                                    Guardar
+                                </button>
+                                <button [routerLink]="'/lista-club'" type="reset" style="margin-left: 20px;" mat-raised-button color="accent">
+                                    <mat-icon>undo</mat-icon>
+                                    Volver
+                                </button>
+
+                            </div>
+                        </form>
+
+                        <br><br><br>
+                    <!-- </mat-card> -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </block-ui> -->

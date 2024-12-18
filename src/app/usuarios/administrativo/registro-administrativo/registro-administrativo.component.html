@@ -1,0 +1,112 @@
+<!-- <block-ui message="Por favor espere..."> -->
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row" style="margin-top:20px;">
+                <div class="offset">
+<!-- 
+                <div class="offset-md-4">     -->
+                    <!-- <mat-card> -->
+
+                        <form [formGroup]="form1" (ngSubmit)="guardar()">
+                            <div class="contenedor ml5 mr5">
+                                <br>
+                                <div class="text-center">
+                                    <br>
+                                    <h3 class="text-center">Registro Administrativo</h3>
+                                    <div class="container text-center">
+                                        <img src="../../../../assets/anadir-amigo.png" width="100" height="100">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="contenedor ml5 mr5">
+
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Cedula</mat-label>
+                                        <input
+                                            [ngClass]="{'is-invalid': hasErrors('adm_cedula','required') || hasErrors('adm_cedula','minlength')}"
+                                            formControlName="adm_cedula" matInput
+                                            placeholder="Digite su Cedula">
+                                        <mat-error *ngIf="hasErrors('dep_cedula','required')">Ingrese una identificacion</mat-error>    
+                                        <mat-error *ngIf="hasErrors('dep_cedula','minlength')">Mínimo diez carácteres</mat-error>    
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Nombres</mat-label>
+                                        <input formControlName="nombre" matInput placeholder="Digite su nombre">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Email</mat-label>
+                                        <input
+                                            [ngClass]="{'is-invalid': hasErrors('email','required') || hasErrors('email','email')}"
+                                            formControlName="email" type="email" matInput placeholder="Digite su email">
+                                            <mat-error *ngIf="hasErrors('email','required')">Email requerido</mat-error>
+                                            <mat-error *ngIf="hasErrors('email','email')">Email inválido</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Telefono</mat-label>
+                                        <input formControlName="telefono" matInput placeholder="Digite su telefono">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Cargo</mat-label>
+                                        <input
+                                            formControlName="cargo"
+                                            matInput
+                                            placeholder="Digite su cargo">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Sueldo</mat-label>
+                                        <input formControlName="sueldo" matInput placeholder="Digite su sueldo">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Club</mat-label>
+                                        <mat-select formControlName="idclub">
+                                            <mat-option *ngFor="let club of clubes" [value]="club.idclub">
+                                                {{ club.nombre }}
+                                              </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Estado</mat-label>
+                                        <mat-select formControlName="estado">
+                                            <mat-option>...</mat-option>
+                                            <mat-option value="Activo">Activo</mat-option>
+                                            <mat-option value="Inactivo">Inactivo</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <br>
+                                <button type="submit" mat-raised-button color="primary" >
+                                    <mat-icon>save</mat-icon>
+                                    Guardar
+                                </button>
+                                <button [routerLink]="'/lista-administrativo'" type="reset" style="margin-left: 20px;" mat-raised-button color="accent">
+                                    <mat-icon>undo</mat-icon>
+                                    Volver
+                                </button>
+
+                            </div>
+                        </form>
+
+                        <br><br><br>
+                    <!-- </mat-card> -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </block-ui> -->

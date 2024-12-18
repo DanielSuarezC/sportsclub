@@ -1,0 +1,279 @@
+<!-- <block-ui message="Por favor espere..."> -->
+    <div class="bootstrap-wrapper">
+        <div class="center-container">
+            <div class="row">
+                <div class="offset">
+<!-- 
+                <div class="offset-md-4">     -->
+                    <!-- <mat-card> -->
+
+                        <form [formGroup]="form1" (ngSubmit)="guardar()">
+                            <div class="contenedor ml5 mr5">
+                                <br>
+                                <div class="text-center">
+                                    <br>
+                                    <h3 class="text-center">Registro de reuniones</h3>
+                                    <div class="container text-center">
+                                        <img src="../../../assets/ICON.png" width="100" height="100">
+                                    </div>
+                                </div>
+                                <br>
+                                <h5>Información básica</h5>
+                            </div>
+                            <br>
+                            <div class="contenedor ml5 mr5">
+
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Identificación</mat-label>
+                                        <input
+                                            [ngClass]="{'is-invalid': hasErrors('identificacion','required') || hasErrors('identificacion','minlength')}"
+                                            formControlName="identificacion" matInput
+                                            placeholder="Digite su Identificación">
+                                        <mat-error *ngIf="hasErrors('identificacion','required')">Ingrese una identificacion</mat-error>    
+                                        <mat-error *ngIf="hasErrors('identificacion','minlength')">Mínimo diez carácteres</mat-error>    
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Nombres</mat-label>
+                                        <input formControlName="nombres" matInput placeholder="Digite sus nombres">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Apellidos</mat-label>
+                                        <input formControlName="apellidos" matInput placeholder="Digite sus apellidos">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Clave</mat-label>
+                                        <input
+                                            [ngClass]="{'is-invalid': hasErrors('clave','required') || hasErrors('clave','minlength')}"
+                                            formControlName="clave" type="password" matInput
+                                            placeholder="Digite su clave">
+                                            <mat-error *ngIf="hasErrors('clave','required')">Clave requerida</mat-error>
+                                            <mat-error *ngIf="hasErrors('clave','minlength')">mínimo 8 carácteres</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-label>Sexo</mat-label>
+                                    <br>
+                                    <mat-radio-group formControlName="sexo" aria-label="Select an option">
+                                        <mat-radio-button value="Femenino">Femenino</mat-radio-button>
+                                        <mat-radio-button value="Masculino">Masculino</mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Email</mat-label>
+                                        <input
+                                            [ngClass]="{'is-invalid': hasErrors('email','required') || hasErrors('email','email')}"
+                                            formControlName="email" type="email" matInput placeholder="Digite su email">
+                                            <mat-error *ngIf="hasErrors('email','required')">Email requerido</mat-error>
+                                            <mat-error *ngIf="hasErrors('email','email')">Email inválido</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Cargo</mat-label>
+                                        <input formControlName="cargo" matInput placeholder="Digite su Cargo">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Rol</mat-label>
+                                        <mat-select formControlName="rol">
+                                            <!-- <mat-option *ngFor="lec r of roles" >
+                                        {{r.roles}}
+                                    </mat-option> -->
+                                            <mat-option>...</mat-option>
+                                            <mat-option value=""></mat-option>
+                                            <mat-option value=""></mat-option>
+                                        </mat-select>
+                                        
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Dependencia</mat-label>
+                                        <mat-select formControlName="iddependencia">
+                                            <!-- <mat-option *ngFor="lec r of roles" >
+                                        {{r.roles}}
+                                    </mat-option> -->
+                                            <mat-option>...</mat-option>
+                                            <mat-option value=""></mat-option>
+                                            <mat-option value=""></mat-option>
+                                        </mat-select>
+                                        <!-- <input formControlName="rol" matInput placeholder="Digite su rol"> -->
+                                    </mat-form-field>
+                                </div>
+                                <h5>Información adicional</h5>
+                                <br>
+                                <div class="contenedorInterno"></div>  
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Dirección</mat-label>
+                                        <input formControlName="direccion" matInput placeholder="Digite su dirección">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Celular</mat-label>
+                                        <input [ngClass]="{'is-invalid': hasErrors('celular','required')}"
+                                            formControlName="celular" type="number" matInput
+                                            placeholder="Digite su Celular">
+                                    </mat-form-field>
+                                    <div class="text-danger" *ngIf="hasErrors('celular','required')"> Celular
+                                        requerido
+                                    </div>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Teléfono 1</mat-label>
+                                        <input formControlName="telefono1" type="number" matInput
+                                            placeholder="Digite Teléfono 1">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Teléfono 2</mat-label>
+                                        <input formControlName="telefono2" type="number" matInput
+                                            placeholder="Digite teléfono 2">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Estrato</mat-label>
+                                        <mat-select formControlName="estrato">
+                                            <mat-option>...</mat-option>
+                                            <mat-option value="1">I</mat-option>
+                                            <mat-option value="2">II</mat-option>
+                                            <mat-option value="3">III</mat-option>
+                                            <mat-option value="4">IV</mat-option>
+                                            <mat-option value="5">V</mat-option>
+                                            <mat-option value="6">VI</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Estado</mat-label>
+                                        <mat-select formControlName="estado">
+                                            <mat-option>...</mat-option>
+                                            <mat-option value="Activo">Activo</mat-option>
+                                            <mat-option value="Inactivo">Inactivo</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Fecha de nacimiento</mat-label>
+                                        <input matInput [matDatepicker]="picker3" formControlName="fechaNacimiento"
+                                            placeholder="MM/DD/YYYY">
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker3></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Fecha de ingreso</mat-label>
+                                        <input matInput [matDatepicker]="picker1" formControlName="fechaIngreso"
+                                            placeholder="MM/DD/YYYY">
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker1></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Fecha de retiro</mat-label>
+                                        <input matInput [matDatepicker]="picker2" formControlName="fechaRetiro"
+                                            placeholder="MM/DD/YYYY">
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker2></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Observaciones</mat-label>
+                                        <input formControlName="observaciones" matInput placeholder="Digite su nombre">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Origen de Cédula</mat-label>
+                                        <input formControlName="origenCedula" matInput
+                                            placeholder="Digite el origen de su cédula">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Ciudad</mat-label>
+                                        <input formControlName="ciudad" matInput placeholder="Digite la ciudad">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Tipo de documento</mat-label>
+                                        <input formControlName="tipoDocumento" matInput
+                                            placeholder="Digite el tipo de documento">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno"></div>
+                                <!-- <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Entidad de salud</mat-label>
+                                        <input formControlName="entidadSalud" matInput
+                                            placeholder="Digite su entidad de salud">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Entidad de pensión</mat-label>
+                                        <input formControlName="entidadPension" matInput
+                                            placeholder="Digite su entidad de pensión">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>ARL</mat-label>
+                                        <input formControlName="arl" matInput placeholder="Digite su ARL">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Número</mat-label>
+                                        <input formControlName="numero" matInput placeholder="Digite su número ">
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Tipo de contrato</mat-label>
+                                        <input formControlName="tipoContrato" matInput
+                                            placeholder="Digite su tipo de contrato">
+                                    </mat-form-field>
+                                </div> -->
+                                <br>
+                                <button type="submit" mat-raised-button color="primary" >
+                                    <mat-icon>save</mat-icon>
+                                    Guardar
+                                </button>
+                                <button [routerLink]="'/lista-reunion'" type="reset" style="margin-left: 20px;" mat-raised-button color="accent">
+                                    <mat-icon>undo</mat-icon>
+                                    Volver
+                                </button>
+
+                            </div>
+                        </form>
+
+                        <br><br><br>
+                    <!-- </mat-card> -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </block-ui> -->

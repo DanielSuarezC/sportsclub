@@ -1,0 +1,88 @@
+<!-- <block-ui message="Por favor espere..."> -->
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="offset">
+<!-- 
+                <div class="offset-md-4">     -->
+                    <!-- <mat-card> -->
+
+                        <form [formGroup]="form1" (ngSubmit)="guardar()">
+                            <div class="contenedor ml5 mr5">
+                                <br>
+                                <div class="text-center">
+                                    <br>
+                                    <h3 class="text-center">Registro de entrenamientos</h3>
+                                    <div class="container text-center">
+                                        <img src="../../../assets/pestana.png" width="100" height="100">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="contenedor ml5 mr5">
+
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Tipo</mat-label>
+                                        <mat-select formControlName="tipo">
+                                            <mat-option>...</mat-option>
+                                            <mat-option value="Táctica">Táctica</mat-option>
+                                            <mat-option value="Estrategia">Estrategia</mat-option>
+                                            <mat-option value="Aperturas">Aperturas</mat-option>
+                                            <mat-option value="Finales">Finales</mat-option>
+                                            <mat-option value="Actividad Física">Actividad Física</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Jornada</mat-label>
+                                        <mat-select formControlName="jornada">
+                                            <mat-option>...</mat-option>
+                                            <mat-option value="Mañana">Mañana</mat-option>
+                                            <mat-option value="Tarde">Tarde</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Entrenador encargado</mat-label>
+                                        <mat-select formControlName="ent_cedula">
+                                            <mat-option *ngFor="let entrenador of entrenadores" [value]="entrenador.ent_cedula" >
+                                            {{entrenador.nombre}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno">
+                                    <mat-form-field class="full-width" >
+                                        <mat-label>Estado</mat-label>
+                                        <mat-select formControlName="estado">
+                                            <mat-option>...</mat-option>
+                                            <mat-option value="Sin empezar">Sin empezar</mat-option>
+                                            <mat-option value="En curso">En curso</mat-option>
+                                            <mat-option value="Finalizado">Finalizado</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="contenedorInterno"></div>
+                                <br>
+                                <button type="submit" mat-raised-button color="primary" >
+                                    <mat-icon>save</mat-icon>
+                                    Guardar
+                                </button>
+                                <button [routerLink]="'/lista-entrenamiento'" type="reset" style="margin-left: 20px;" mat-raised-button color="accent">
+                                    <mat-icon>undo</mat-icon>
+                                    Volver
+                                </button>
+
+                            </div>
+                        </form>
+
+                        <br><br><br>
+                    <!-- </mat-card> -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </block-ui> -->
