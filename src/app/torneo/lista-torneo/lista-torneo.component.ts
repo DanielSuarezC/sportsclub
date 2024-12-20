@@ -15,7 +15,8 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-lista-torneo',
   templateUrl: './lista-torneo.component.html',
-  styleUrls: ['./lista-torneo.component.css']
+  styleUrls: ['./lista-torneo.component.css'],
+  standalone: false
 })
 export class ListaTorneoComponent implements OnInit{
   displayedColumns: string[] = ['idtorneo','nombre','fecha','modalidad','club','estado', 'detalles','icon'];

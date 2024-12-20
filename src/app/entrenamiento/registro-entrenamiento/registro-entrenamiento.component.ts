@@ -14,7 +14,8 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-registro-entrenamiento',
   templateUrl: './registro-entrenamiento.component.html',
-  styleUrls: ['./registro-entrenamiento.component.css']
+  styleUrls: ['./registro-entrenamiento.component.css'],
+  standalone: false
 })
 export class RegistroEntrenamientoComponent {
   datoMaestro: Entrenamiento = new Entrenamiento();

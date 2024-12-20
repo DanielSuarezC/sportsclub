@@ -17,7 +17,8 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-lista-entrenamiento',
   templateUrl: './lista-entrenamiento.component.html',
-  styleUrls: ['./lista-entrenamiento.component.css']
+  styleUrls: ['./lista-entrenamiento.component.css'],
+  standalone: false
 })
 export class ListaEntrenamientoComponent implements OnInit{
   displayedColumns: string[] = ['identrenamiento','tipo', 'jornada', 'ent_cedula','estado','detalles', 'icon'];

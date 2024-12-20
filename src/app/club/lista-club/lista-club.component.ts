@@ -14,7 +14,8 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-lista-club',
   templateUrl: './lista-club.component.html',
-  styleUrls: ['./lista-club.component.css']
+  styleUrls: ['./lista-club.component.css'],
+  standalone: false
 })
 export class ListaClubComponent implements OnInit {
 

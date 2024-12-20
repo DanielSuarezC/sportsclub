@@ -11,7 +11,8 @@ import { Reunion } from 'src/app/modelo/reunion/reunion';
 @Component({
   selector: 'app-lista-reunion',
   templateUrl: './lista-reunion.component.html',
-  styleUrls: ['./lista-reunion.component.css']
+  styleUrls: ['./lista-reunion.component.css'],
+  standalone: false
 })
 export class ListaReunionComponent implements OnInit{
   displayedColumns: string[] = ['nombres', 'identificacion', 'rol','estado','icon'];

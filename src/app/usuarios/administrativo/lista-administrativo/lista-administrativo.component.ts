@@ -14,7 +14,8 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-lista-administrativo',
   templateUrl: './lista-administrativo.component.html',
-  styleUrls: ['./lista-administrativo.component.css']
+  styleUrls: ['./lista-administrativo.component.css'],
+  standalone: false
 })
 export class ListaAdministrativoComponent implements OnInit{
   displayedColumns: string[] = ['nombre','adm_cedula', 'email','telefono','cargo','sueldo','club','estado','icon'];

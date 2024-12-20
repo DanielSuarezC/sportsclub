@@ -93,7 +93,8 @@ const routes: Routes = [
   {
     path: 'detalles-entrenamiento',
     component: DetallesEntrenamientoComponent
-  }
+  },
+
 ];
 
 @NgModule({

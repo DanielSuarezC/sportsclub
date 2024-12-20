@@ -19,7 +19,8 @@ import { Club } from 'src/app/modelo/club/club';
 @Component({
   selector: 'app-detallestorneo',
   templateUrl: './detallestorneo.component.html',
-  styleUrls: ['./detallestorneo.component.css']
+  styleUrls: ['./detallestorneo.component.css'],
+  standalone: false
 })
 export class DetallestorneoComponent {
 

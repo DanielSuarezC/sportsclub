@@ -13,7 +13,8 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-registro-entrenador',
   templateUrl: './registro-entrenador.component.html',
-  styleUrls: ['./registro-entrenador.component.css']
+  styleUrls: ['./registro-entrenador.component.css'],
+  standalone: false
 })
 export class RegistroEntrenadorComponent implements OnInit{
   datoMaestro: Entrenador = new Entrenador();

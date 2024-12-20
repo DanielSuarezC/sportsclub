@@ -17,7 +17,8 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-detalles-entrenamiento',
   templateUrl: './detalles-entrenamiento.component.html',
-  styleUrls: ['./detalles-entrenamiento.component.css']
+  styleUrls: ['./detalles-entrenamiento.component.css'],
+  standalone: false
 })
 export class DetallesEntrenamientoComponent implements OnInit,AfterViewInit {
   datoMaestro: Entrenamiento = new Entrenamiento();

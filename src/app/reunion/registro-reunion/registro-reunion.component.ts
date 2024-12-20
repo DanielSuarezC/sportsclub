@@ -8,7 +8,8 @@ import { Reunion } from 'src/app/modelo/reunion/reunion';
 @Component({
   selector: 'app-registro-reunion',
   templateUrl: './registro-reunion.component.html',
-  styleUrls: ['./registro-reunion.component.css']
+  styleUrls: ['./registro-reunion.component.css'],
+  standalone: false
 })
 export class RegistroReunionComponent implements OnInit{
   datoMaestro: Reunion = new Reunion();

@@ -11,7 +11,8 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-registro-club',
   templateUrl: './registro-club.component.html',
-  styleUrls: ['./registro-club.component.css']
+  styleUrls: ['./registro-club.component.css'],
+  standalone: false
 })
 export class RegistroClubComponent implements OnInit,AfterViewInit{
   datoMaestro: Club = new Club();

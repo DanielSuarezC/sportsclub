@@ -15,7 +15,8 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-lista-entrenador',
   templateUrl: './lista-entrenador.component.html',
-  styleUrls: ['./lista-entrenador.component.css']
+  styleUrls: ['./lista-entrenador.component.css'],
+  standalone: false
 })
 export class ListaEntrenadorComponent implements OnInit {
 

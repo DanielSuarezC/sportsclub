@@ -13,7 +13,8 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-registro-torneo',
   templateUrl: './registro-torneo.component.html',
-  styleUrls: ['./registro-torneo.component.css']
+  styleUrls: ['./registro-torneo.component.css'],
+  standalone: false
 })
 export class RegistroTorneoComponent implements OnInit{
   datoMaestro: Torneo = new Torneo();

@@ -14,7 +14,8 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-registro-administrativo',
   templateUrl: './registro-administrativo.component.html',
-  styleUrls: ['./registro-administrativo.component.css']
+  styleUrls: ['./registro-administrativo.component.css'],
+  standalone: false
 })
 export class RegistroAdministrativoComponent implements OnInit{
   datoMaestro: Administrativo = new Administrativo();
