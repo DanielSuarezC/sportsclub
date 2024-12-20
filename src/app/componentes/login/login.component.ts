@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { environment } from 'src/enviroments/environment';
+import { Router } from '@angular/router';
+// import { environment } from 'src/enviroments/environment';
+import { environment } from 'src/enviroments/environment.prod';
 // import { CookieService } from 'ngx-cookie-service';
 
 @Component({
@@ -30,6 +32,7 @@ export class LoginComponent implements OnInit{
 
   constructor(private fb: FormBuilder,
     private dialog: MatDialog,
+    private route: Router
   ) { }
 
   ngOnInit(): void {
