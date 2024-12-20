@@ -14,6 +14,7 @@ export class AppComponent implements OnInit{
   menuselect = '';
 
   baseUrl = environment.urlAplicacion;
+  baseUrl2 = 'https://sportsclub.pages.dev/';
   // constructor(private cookieService: CookieService) {
 
   // }
@@ -21,14 +22,14 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     console.log(window.location.toString());
     console.debug(window.location.toString());
-    if (window.location.toString() === this.baseUrl + '#/login' ||
-        window.location.toString() === this.baseUrl + '/login') {
+    if (window.location.toString() === this.baseUrl2 + '#/login' ||
+        window.location.toString() === this.baseUrl2 + '/login') {
           console.log('entro al if 1');
-    } else if (window.location.toString() === this.baseUrl + '#/' ||
-      window.location.toString() === this.baseUrl) {
+    } else if (window.location.toString() === this.baseUrl2 + '#/' ||
+      window.location.toString() === this.baseUrl2) {
       // window.location.href = this.baseUrl + '#/login';
       console.log('entro al if 2');
-      window.location.href = this.baseUrl + '#/login';
+      window.location.href = this.baseUrl2 + '#/login';
     } else {
       // const token = this.cookieService.get(environment.nombreCookieToken);
       // if (token === null || !token || token === undefined || token === '') {
